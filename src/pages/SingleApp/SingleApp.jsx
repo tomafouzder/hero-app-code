@@ -8,9 +8,9 @@ const SingleApp = ({ singleApp }) => {
     const { id, image, title, ratingAvg, downloads } = singleApp;
     return (
         <Link to={`appDetails/${id}`}>
-            <div className="card bg-base-100 p-4 shadow-sm ">
-                <figure className='rounded-2xl'>
-                    <img
+            <div className="card bg-base-100 p-1 border hover:scale-105 transition ease-in-out shadow-sm ">
+                <figure className='rounded-2xl overflow-hidden h-64'>
+                    <img className=''
                         src={image}
                         alt="Shoes" />
                 </figure>
