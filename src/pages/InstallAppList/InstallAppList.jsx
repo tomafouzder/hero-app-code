@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+
 import { getStoredApp } from '../../utility/addToDB';
 import SingleApp from '../SingleApp/SingleApp';
-import Apps from '../Apps/Apps';
+import useApps from '../../Hooks/useApps';
+
 
 const InstallAppList = () => {
 
     const [appList, setAppList] = useState([]);
 
-    const data = useLoaderData();
-    console.log(data);
+ const { apps, loading, error } = useApps()
+   
 
     useEffect(() => {
         const storedAppData = getStoredApp();
         const convertedStoredApps = storedAppData.map(id => parseInt(id));
-        const myAppList = data.filter(app => convertedStoredApps.includes(app.id))
+        const myAppList = apps.filter(app => convertedStoredApps.includes(app.id))
         setAppList(myAppList)
     }, [])
 
