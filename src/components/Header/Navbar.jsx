@@ -1,13 +1,15 @@
 import React from 'react';
-
+import { Link, NavLink } from 'react-router';
+import logoImg from '../../assets/logo.png'
 const Navbar = () => {
     const links = <>
-        <li className='m-2'>Home</li>
-        <li className='m-2'>Apps</li>
-        <li className='m-2'>Installation</li>
+        <Link to={'/'}><li className='m-2'>Home</li></Link>
+        <Link to={'/allApps'}><li className='m-2'>Apps</li></Link>
+        <Link to={''}><li className='m-2'>Installation</li></Link>
+        
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 px-8 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +29,10 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">HERO.IO</a>
+                <div className='flex justify-center items-center'>
+                    <Link to={'/'}><img className='w-10' src={logoImg} alt="" /></Link>
+                    <Link to={'/'}><li className='m-2'>HERO.IO</li></Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
