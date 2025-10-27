@@ -34,7 +34,6 @@ export const router = createBrowserRouter([
                 path: '/appDetails/:id',
                 Component:AppDetails
             },
-
         ]
     },
 ]);
